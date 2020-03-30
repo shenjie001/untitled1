@@ -30,7 +30,7 @@ class doExcel:
     i=1
     dic = {i: list[i - 1]}
     while i<=x:
-        dic[i]=list[i-1][4]
+        dic[i]=list[i-1][5]
         i=i+1
     return dic
 
@@ -49,7 +49,7 @@ class doExcel:
     i=1
     dic = {i: list[i - 1]}
     while i<=x:
-        dic[i]=list[i-1][5]
+        dic[i]=list[i-1][6]
         i=i+1
     return dic
 
@@ -109,7 +109,14 @@ class doExcel:
         dic[i] = list[i - 1][1]
         i = i + 1
     return dic
-
+ def returnmethod(list):
+     x = len(list)
+     i = 1
+     dic = {i: list[i - 1]}
+     while i <= x:
+         dic[i] = list[i - 1][4]
+         i = i + 1
+     return dic
 
  #得到一个数据封装好的二维数组#
  def getData(fileName,excelName):
@@ -123,9 +130,10 @@ class doExcel:
          DB=doExcel.getDB(sql[i])
          SQL=doExcel.getSQL(sql[i])
          URL=doExcel.retrunUrl(x)
+         METHOD=doExcel.returnmethod(x)
          PARAM=doExcel.retrunParam(x)
          EXPECT=doExcel.retrunExcept(x)
-         lists[i-1]=[CaseName[i],DB,SQL,URL[i],PARAM[i],EXPECT[i]]
+         lists[i-1]=[CaseName[i],DB,SQL,URL[i],METHOD[i],PARAM[i],EXPECT[i]]
          i=i+1
      return lists
 
