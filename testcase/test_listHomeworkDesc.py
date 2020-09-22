@@ -2,14 +2,10 @@ import unittest
 from  commonclass.http1 import http2
 from  commonclass.readexcel import doExcel
 import  parameterized
-data = doExcel.getData('test','listHomeworkDesc2')
+data = doExcel.getData('test','listHomeworkDesc')
 class Mytest(unittest.TestCase):
-      def setUp(self):
-          print('**************本次接口测试开始*************')
-      def tearDown(self):
-          print('**************本次接口测试结束*************')
-      @parameterized.parameterized.expand(data)
-      def test(self,casename,db,sql,url,method,params,Except):
+     @parameterized.parameterized.expand(data)
+     def test(self,casename,db,sql,url,method,params,Except):
          res = http2.testHttp(casename,db,sql,url,method,params,Except)
          if Except=='1':
                 self.assertEquals(1,1)

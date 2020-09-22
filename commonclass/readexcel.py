@@ -135,6 +135,7 @@ class doExcel:
          EXPECT=doExcel.retrunExcept(x)
          lists[i-1]=[CaseName[i],DB,SQL,URL[i],METHOD[i],PARAM[i],EXPECT[i]]
          i=i+1
+         print(lists)
      return lists
 
 
